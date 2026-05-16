@@ -15,6 +15,8 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts-maps@1.1.0/china.js"></script>
 </head>
 <body>
   <header class="site-header" id="top">
@@ -24,6 +26,7 @@
       <span></span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="主导航">
+      <a href="#impact">案件影响</a>
       <a href="#timeline">案发经过</a>
       <a href="#status">目前状态</a>
       <a href="#join">如何参与</a>
@@ -50,6 +53,40 @@
         <figure class="hero-image-frame">
           <img src="./img/head.png" alt="处方笺代购诈骗案件首页主视觉图">
         </figure>
+      </div>
+    </section>
+
+    <section class="section impact-section" id="impact">
+      <div class="section-head impact-head">
+        <p class="section-kicker">案件影响</p>
+        <h2 class="impact-title">
+          <span class="impact-stat">
+            <span class="impact-stat-value glow-number">661</span>
+            <span class="impact-stat-unit">名受害人</span>
+          </span>
+          <span class="impact-stat-divider">|</span>
+          <span class="impact-stat">
+            <span class="impact-stat-value glow-number">113,801.98</span>
+            <span class="impact-stat-unit">元涉案金额</span>
+          </span>
+        </h2>
+        <p class="impact-subtitle">以下以真实中国地图叠加省份气泡的方式展示统计情况，气泡大小代表受害人数，颜色深浅代表涉案金额，金额按千位缩写显示。</p>
+      </div>
+      <div class="impact-layout">
+        <div class="impact-map-wrap">
+          <div class="impact-legend">
+            <span>金额热力</span>
+            <div class="impact-legend-bar"></div>
+            <span>低</span>
+            <span>高</span>
+          </div>
+          <div class="impact-map" id="impact-map" aria-label="中国各省份受害人分布及金额热力图"></div>
+        </div>
+        <aside class="impact-note">
+          <p class="impact-note-title">补充提醒</p>
+          <p>目前统计并不代表全部受害者情况，依旧有许多受害人尚未加入维权群，也未完成金额登记。</p>
+          <p>如你身边仍有未进群受害者，建议尽快同步本页面与维权群信息，便于后续统一报案与补充证据。</p>
+        </aside>
       </div>
     </section>
 
@@ -155,7 +192,7 @@
     <section class="section status-section" id="status">
       <div class="section-head">
         <p class="section-kicker">案件目前状态</p>
-        <h2>持续更新最新进展</h2>
+        <h2>三个主要地区维权进展时间线</h2>
       </div>
       <p class="status-intro">
         由于受害人分布全国各地，导致案件追踪与受理难度极大。目前主要三个受害人集中区域的维权情况如下。
@@ -163,18 +200,39 @@
       <div class="status-grid">
         <article class="status-card">
           <p class="status-region">江浙沪</p>
-          <h3>已推进线下集体报案</h3>
-          <p>已有十余位受害者集体在南京东路派出所完成行政案件立案。</p>
+          <div class="status-timeline">
+            <div class="status-point">
+              <p class="status-date">5.15</p>
+              <div class="status-content">
+                <h3>上海南京东路派出所已立行政案件</h3>
+                <p>大金额受害人在上海南京东路派出所立案行政案件。</p>
+              </div>
+            </div>
+          </div>
         </article>
         <article class="status-card">
           <p class="status-region">深圳</p>
-          <h3>进度待更新</h3>
-          <p>当前区域维权进展正在整理中，后续会统一补充最新报案与受理情况。</p>
+          <div class="status-timeline">
+            <div class="status-point">
+              <p class="status-date">5.16</p>
+              <div class="status-content">
+                <h3>受害人代表前往河源报案</h3>
+                <p>受害人代表前往处方笺所在地河源进行报案。</p>
+              </div>
+            </div>
+          </div>
         </article>
         <article class="status-card">
           <p class="status-region">北京</p>
-          <h3>进度待更新</h3>
-          <p>当前区域维权进展正在整理中，后续会统一补充最新报案与受理情况。</p>
+          <div class="status-timeline">
+            <div class="status-point">
+              <p class="status-date">5.16</p>
+              <div class="status-content">
+                <h3>预计明天线下尝试立刑事</h3>
+                <p>若无法立刑事，将正常提交第一批证据。</p>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </section>
