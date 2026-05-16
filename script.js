@@ -6,6 +6,11 @@ const lightboxImage = document.querySelector(".lightbox-image");
 const lightboxClose = document.querySelector(".lightbox-close");
 const zoomableImages = document.querySelectorAll(".zoomable-image");
 const impactMap = document.querySelector("#impact-map");
+const urlParams = new URLSearchParams(window.location.search);
+
+if (urlParams.get("long") === "1") {
+  document.body.classList.add("long-mode");
+}
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {

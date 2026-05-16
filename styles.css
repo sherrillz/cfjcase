@@ -712,6 +712,108 @@ a {
   margin: 0 0 0.45rem;
 }
 
+.reporting-section {
+  margin-top: 2.8rem;
+}
+
+.reporting-head {
+  margin-bottom: 1.3rem;
+}
+
+.reporting-head h3 {
+  margin: 0;
+  max-width: 60rem;
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.reporting-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.25rem;
+}
+
+.reporting-card {
+  padding: 1.4rem;
+  background: var(--paper);
+  border: 1px solid rgba(165, 62, 43, 0.18);
+  box-shadow: var(--shadow);
+}
+
+.reporting-card h4 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.reporting-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reporting-label {
+  margin: 0 0 0.6rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.reporting-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.reporting-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.flow-step {
+  min-height: 100%;
+  padding: 1rem;
+  background: rgba(165, 62, 43, 0.06);
+  border: 1px solid rgba(165, 62, 43, 0.12);
+}
+
+.flow-step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.flow-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  margin-bottom: 0.75rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(165, 62, 43, 0.12);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.flow-arrow {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.reporting-note-card {
+  margin-top: 1.25rem;
+}
+
+.reporting-card a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 @keyframes pulseGlow {
   0%,
   100% {
@@ -782,24 +884,19 @@ a {
   max-width: 60rem;
 }
 
-.faq-list details {
+.faq-item {
   padding: 1.2rem 1.3rem;
   background: rgba(249, 245, 236, 0.72);
   border: 1px solid var(--line);
 }
 
-.faq-list summary {
-  cursor: pointer;
+.faq-item h3 {
+  margin: 0 0 0.75rem;
   font-weight: 700;
-  list-style: none;
 }
 
-.faq-list summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-list details p {
-  padding-top: 0.8rem;
+.faq-item p + p {
+  margin-top: 0.8rem;
 }
 
 .contact-layout {
@@ -833,10 +930,89 @@ a {
   transform: translateY(0);
 }
 
+body.long-mode {
+  background: #f4edde;
+}
+
+body.long-mode .site-header,
+body.long-mode .site-footer,
+body.long-mode .hero-actions,
+body.long-mode .lightbox {
+  display: none;
+}
+
+body.long-mode .hero {
+  min-height: auto;
+  grid-template-columns: 1fr;
+  padding: 2.5rem 1rem 1.25rem;
+  gap: 1.25rem;
+}
+
+body.long-mode .hero-content,
+body.long-mode .hero-aside {
+  max-width: none;
+}
+
+body.long-mode .hero-image-frame {
+  width: 100%;
+  max-width: none;
+}
+
+body.long-mode .section {
+  padding: 2rem 1rem;
+}
+
+body.long-mode .impact-layout,
+body.long-mode .status-grid,
+body.long-mode .reporting-grid,
+body.long-mode .steps,
+body.long-mode .contact-layout {
+  grid-template-columns: 1fr;
+}
+
+body.long-mode .impact-map-wrap {
+  overflow: visible;
+}
+
+body.long-mode .impact-map {
+  min-width: 0;
+  min-height: 520px;
+}
+
+body.long-mode .timeline-item {
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+}
+
+body.long-mode .timeline-gallery {
+  grid-template-columns: 1fr;
+}
+
+body.long-mode .timeline-figure.wide {
+  grid-column: auto;
+}
+
+body.long-mode .reporting-split,
+body.long-mode .reporting-flow {
+  grid-template-columns: 1fr;
+}
+
+body.long-mode .flow-arrow {
+  justify-self: center;
+  transform: rotate(90deg);
+}
+
+body.long-mode .reveal,
+body.long-mode .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (max-width: 980px) {
   .hero,
   .impact-layout,
   .status-grid,
+  .reporting-grid,
   .steps,
   .contact-layout {
     grid-template-columns: 1fr;
@@ -923,6 +1099,16 @@ a {
   .impact-map {
     min-width: 620px;
     min-height: 760px;
+  }
+
+  .reporting-split,
+  .reporting-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-arrow {
+    justify-self: center;
+    transform: rotate(90deg);
   }
 
   .site-footer {
