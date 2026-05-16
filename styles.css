@@ -785,6 +785,32 @@ a {
   color: var(--muted);
 }
 
+.flow-step p + p {
+  margin-top: 0.75rem;
+}
+
+.flow-note {
+  padding-top: 0.15rem;
+  font-size: 0.98em;
+}
+
+.note-tag,
+.inline-emphasis {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.note-tag {
+  display: inline-block;
+  margin-right: 0.3rem;
+}
+
+.inline-note {
+  margin-top: 0.45rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
 .flow-index {
   display: inline-flex;
   align-items: center;
